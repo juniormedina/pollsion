@@ -1,0 +1,199 @@
+{{#if error}}
+<div class="notification red lighten-1 center"><span>{{error}}</span></div>
+{{/if}}
+<div class="section section-poll white-text center">
+    <div class="row">
+
+        <div class="poll-header col offset-s1 s10">
+            <span class="grey-text text-darken-3">Start your Pollsion! </span>
+        </div>
+
+        <form>
+            <div class="poll-container purple z-depth-2 col 
+                offset-s1 s10
+                    offset-m2 m8
+                        offset-l3 l6">
+
+                <!-- Settings Icon -->
+                <div class="row row-settings">
+                    <div class="col s12 right-align">
+                        <a href="#" class="sidenav-trigger btn-settings" data-target="settings-nav">
+                            <i class="material-icons white-text rotates" id="icon-settings">settings</i></a>
+                    </div>
+                </div>
+
+                <!-- Title -->
+                <div class="row row-poll-title poll-title">
+                    <div class="col offset-s1 s10 offset-s1 left-align">
+                        <div class="input-field">
+                            <input autofocus type="text" name="title" class="white-text poll-element" id="poll-title-input">
+                            <label for="title" id="poll-title-label"><a href="#" id="btn-poll-title-label">Title:</a></label>
+                        </div>
+                    </div>
+                </div>
+                {{!-- <br> --}}
+                {{!-- <div class="divider"></div> --}}
+
+                <!-- Options -->
+                <div class="row row-poll poll-option">
+                    <div class="col
+                        offset-s1 s8
+                            offset-m1 m8 offset-m1 
+                                offset-l1 l9 offset-l1 ">
+                        <div class="input-field">
+                            <input type="text" class="white poll-element poll-option-input" placeholder="Enter an option"
+                                img="">
+                        </div>
+                    </div>
+                    <div class="col 
+                        s1
+                            m2 
+                                l1">
+                        <a href="#addImageURL" class="add-url tooltipped" data-position="top" data-tooltip="Add Image URL">
+                            <span class="image-placeholder">
+                                <i class="material-icons icon-add-image white-text">add_photo_alternate</i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row row-poll poll-option">
+                    <div class="col
+                        offset-s1 s8
+                            offset-m1 m8 offset-m1 
+                                offset-l1 l9 offset-l1 ">
+                        <div class="input-field">
+                            <input type="text" class="white poll-element poll-option-input" placeholder="Enter an option"
+                                img="">
+                        </div>
+                    </div>
+                    <div class="col s2 m2 l1">
+                        <a href="#addImageURL" class="add-url tooltipped" data-position="top" data-tooltip="Add Image URL">
+                            <span class="image-placeholder">
+                                <i class="material-icons icon-add-image white-text">add_photo_alternate</i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- Placeholder Option  -->
+                <!-- Make new-option-button pulse when user enters data into 2nd option field -->
+                <div class="row row-poll poll-placeholder">
+                    <div class="col
+                        offset-s1 s8
+                            offset-m1 m8 offset-m1 
+                                offset-l1 l9 offset-l1 ">
+                        <div class="input-field">
+                            <a id="btn-poll-add" class="btn-floating waves-effect waves-purple white btn-poll-modify">
+                                <i class="material-icons purple-text">add</i>
+                            </a>
+                            <input disabled type="text" class="white poll-placeholder-input">
+                        </div>
+                    </div>
+                    <div class="col s1 m2 l1">
+                        
+                        <i class="material-icons icon-add-image white-text" style="cursor: default">add_photo_alternate</i>
+                        
+                    </div>
+                </div>
+
+                <!-- Create -->
+                <div class="row ">
+                    <div class="col s12">
+                        <button id="btn-poll-create" class="btn-poll btn-large purple darken-1
+ white-text waves-effect waves-light">Create</button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<!-- Modal Structure -->
+<div id="addImageURL" class="modal poll-modal">
+    <div class="modal-content center">
+        <div class="row valign-wrapper">
+            <div class="col s9 m10 l10 xl11">
+                <input type="text" class="input-set-url input-poll-modal" style="width: 100%;" placeholder="Enter image URL">
+            </div>
+            <div class="col s3 m2 l2 xl1">
+                <button class="btn btn-set-url purple">
+                    <i class="material-icons">done</i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{!-- Settings Side-Nav --}}
+<ul id="settings-nav" class="sidenav">
+    <div class="row">
+        <div class="col offset-s10 s2">
+            <h5 class="sidenav-close">&#10005;</h5>
+        </div>
+    </div>
+
+    <!-- Settings Switches -->
+
+    <h5 class="center grey-text">Extras</h5>
+    <div class="row switch">
+        <div class="col offset-s1 s10 offset-s1">
+            <label class="switch-label">
+                <i class="tooltipped material-icons" data-position="top" data-tooltip="Link images for each option">info_outline</i>
+                Images
+                <input type="checkbox" id="switch-images">
+                <span class="lever"></span>
+            </label>
+        </div>
+    </div>
+    <br>
+
+    <h5 class="center grey-text">Security</h5>
+    {{!-- <div class="row switch">
+        <div class="col offset-s1 s10 offset-s1">
+            <label class="switch-label">
+                <i class="tooltipped material-icons" data-position="top" data-tooltip="Single vote per Browser">info_outline</i>
+                Unique Browser
+                <input type="checkbox" checked>
+                <span class="lever"></span>
+            </label>
+        </div>
+    </div> --}}
+
+    <div class="row switch">
+        <div class="col offset-s1 s10 offset-s1">
+            <label class="switch-label green-text">
+                By default users can only vote once per computer.
+            </label>
+        </div>
+    </div>
+
+    <div class="row switch">
+        <div class="col offset-s1 s10 offset-s1">
+            <label class="switch-label">
+                <i class="tooltipped material-icons" data-position="top" data-tooltip="Single vote per IP address">info_outline</i>
+                Unique IP
+                <input type="checkbox" id="switch-uniqueIP">
+                <span class="lever"></span>
+            </label>
+        </div>
+    </div>
+    <br>
+
+    <h5 class="center grey-text">Age Restrictions</h5>
+    <div class="row switch">
+        <div class="col offset-s1 s10 offset-s1">
+            <label class="switch-label">
+                <i class="tooltipped material-icons" data-position="top" data-tooltip="Content contains violence, gore, nudity, or ...">info_outline</i>
+                Mature Content
+                <input type="checkbox" id="switch-mature">
+                <span class="lever"></span>
+            </label>
+        </div>
+    </div>
+
+</ul>

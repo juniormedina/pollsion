@@ -1,0 +1,75 @@
+<div class="section section-poll white-text" url="{{url}}">
+    <div class="row">
+        <div class="poll-header col offset-s1 s10 center">
+            {{#if created}}
+                <span class="grey-text text-darken-3">Your Pollsion has been created @
+            {{else}}
+                <span class="grey-text text-darken-3">Pollsion @
+            {{/if}}
+                    <btn class="btn btn-large btn-poll-link grey darken-3 white-text">/{{url}}</btn>
+                </span>
+        </div>
+
+        <div class="poll-container vote-container purple z-depth-2 col 
+                offset-s1 s10 
+                    offset-m2 m8 
+                        offset-l3 l6">
+            <div class="row">
+                <div class="col offset-s1 s10 center">
+                    <div class="poll-title">
+                        {{title}}
+                    </div>
+                </div>
+            </div>
+
+            {{#each options}}
+
+            <div class="row">
+                <div class="col offset-s1 s1">
+                    <div class="poll-radio">
+                        <p>
+                            <label>
+                                <input type="radio" name="options" value="{{id}}" />
+                                <span></span>
+                            </label>
+                        </p>
+                    </div>
+                </div>
+                {{#with ../settings}}
+                {{#if images}}
+                <div class="col s8 center">
+                    {{else}}
+                    <div class="col s8">
+                        {{/if}}
+                        {{/with}}
+                        <p class="poll-text">{{text}}</p>
+                    </div>
+                </div>
+                {{#with ../settings}}
+                {{#if images}}
+                <div class="row">
+                    <div class="col offset-s3 s6 center">
+                        <a href="#modal-image-{{../id}}" class="modal-trigger">
+                            <img class="poll-image-preview center" src="{{../img}}">
+                        </a>
+                    </div>
+                </div>
+                <!-- Modal Structure -->
+                <div id="modal-image-{{../id}}" class="modal modal-image">
+                    <img class="image-enlarge" src="{{../img}}">
+                </div>
+                {{/if}}
+                {{/with}}
+                {{/each}}
+
+                <p class="center">
+                    <button id="btn-poll-vote" class="btn-poll btn-large light-green white-text waves-effect waves-light">Vote</button>
+                    <button id="btn-poll-results" class="btn-poll btn-large grey darken-1 white-text waves-effect waves-light">
+                        <div class="valign-wrapper">
+                            <i class="material-icons white-text">equalizer</i>Results
+                        </div>
+                    </button>
+                </p>
+            </div>
+        </div>
+    </div>

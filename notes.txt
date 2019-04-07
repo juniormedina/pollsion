@@ -1,0 +1,2 @@
+Add circle behind poll container - to add a clipboard look to it (similar to the icon)
+when user adds a new field, add an X to remove that field

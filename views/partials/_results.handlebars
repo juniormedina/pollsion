@@ -1,0 +1,69 @@
+{{#if error}}
+<div class="notification red lighten-1 center"><span>{{error}}</span></div>
+{{/if}}
+{{#if success}}
+<div class="notification green red lighten-1 center"><span>{{success}}</span></div>
+{{/if}}
+<div class="section section-poll white-text" url="{{url}}">
+    <div class="row">
+        <div class="poll-header col offset-s1 s10 center">
+            <span class="grey-text text-darken-3">Here are the results for @
+                <btn class="btn btn-large btn-poll-link grey darken-3 white-text">/{{url}}</btn></span>
+        </div>
+        <div class="poll-container vote-container purple z-depth-2 col 
+                offset-s1 s10 
+                    offset-m2 m8 
+                        offset-l3 l6">
+            <div class="row">
+                <div class="col offset-s1 s10 center">
+                    <div class="poll-title">
+                        {{title}}
+                    </div>
+                </div>
+            </div>
+
+            {{#each options}}
+            <div class="row">
+                <div class="col offset-s1 s4">
+                    <p class="poll-text">{{text}}</p>
+                </div>
+                <div class="col s5">
+                    <p class="poll-text">{{votes}} Vote(s)!</p>
+                </div>
+            </div>
+            {{#with ../settings}}
+            {{#if images}}
+            <div class="row">
+                <div class="col offset-s1 s4">
+                    <a href="#modal-image-{{../id}}" class="modal-trigger">
+                        <img class="poll-image-preview center" src="{{../img}}">
+                    </a>
+                </div>
+            </div>
+            <!-- Modal Structure -->
+            <div id="modal-image-{{../id}}" class="modal modal-image">
+                <img class="image-enlarge" src="{{../img}}">
+            </div>
+            {{/if}}
+            {{/with}}
+            {{/each}}
+            {{#if allowedToVote}}
+            <p class="center">
+                <button id="btn-poll-votepage" class="btn-poll btn-large grey darken-1 white-text waves-effect waves-light">Vote
+                    Now!</button>
+            </p>
+            {{else}}
+            <br>
+            {{/if}}
+        </div>
+    </div>
+</div>
+
+{{!-- {{#each options}}
+<p>
+    <label>
+        <span>{{text}} has {{votes}} votes!</span>
+    </label>
+</p>
+{{/each}}
+<canvas id="myChart" width="400" height="400"></canvas> --}}

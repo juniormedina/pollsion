@@ -1,0 +1,20 @@
+{
+  "name": "pollsion",
+  "version": "1.0.0",
+  "description": "An innovative web app for creating polls",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon"
+  },
+  "keywords": [],
+  "author": "The Nomadic Dev",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
+    "mongoose": "^5.2.17"
+  }
+}
