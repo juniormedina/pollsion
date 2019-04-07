@@ -172,7 +172,8 @@ $(document).ready(() => {
     $(".btn-poll-link").off();
     $(".btn-poll-link").on("click", () => {
       let copyText = document.createElement('textarea');
-      copyText.value = 'localhost:5000' + $(".btn-poll-link").html();
+      let origin   = window.location.origin; 
+      copyText.value = origin + $(".btn-poll-link").html();
       document.body.appendChild(copyText);
       copyText.select();
       document.execCommand('copy');
